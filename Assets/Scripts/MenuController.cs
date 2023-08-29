@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 
+
+
 public class MenuController : MonoBehaviour
 {
     public GameObject RulesScreen;
 
+    //Kuvan koon pitää olla asetettuna 0.2, 0.2, 1.
     public Image RulesImage;
 
     private void Start()
