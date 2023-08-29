@@ -15,6 +15,8 @@ public class MenuController : MonoBehaviour
     //Kuvan koon pitää olla asetettuna 0.2, 0.2, 1.
     public Image RulesImage;
 
+    public Button SettingsBtn;
+
     private void Start()
     {
         RulesScreen.SetActive(false);
@@ -22,7 +24,7 @@ public class MenuController : MonoBehaviour
 
     public void PlayIsPressed()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void SettingsIsPressed()
@@ -46,12 +48,18 @@ public class MenuController : MonoBehaviour
             
         }
 
-        
+
+        SettingsBtn.enabled = false;
+        Invoke("PressingSettingsTrue", 0.5f);
 
 
 
-        
         //Invoke("SettingAnimation", 0.21f);
+    }
+
+    public void QuitIsPressed()
+    {
+        Application.Quit();
     }
 
     void SettingAnimation()
@@ -71,8 +79,11 @@ public class MenuController : MonoBehaviour
     }
 
 
-    public void QuitIsPressed()
+
+
+    void PressingSettingsTrue()
     {
+        SettingsBtn.enabled = true;
 
     }
 }
