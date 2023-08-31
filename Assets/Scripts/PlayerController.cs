@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController Instance;
 
+    //public Shake Shakey;
+
     private float playerSpeed;
     private float boostRecovery = 4.5f;
     private float nextBoost;
@@ -60,6 +62,7 @@ public class PlayerController : MonoBehaviour
         playerSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         playerNator = GetComponent<Animator>();
+        //shakey = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
     }
 
     // Kutsutaan joka kehyksella
