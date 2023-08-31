@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+//using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb;
 
+    //kutsutaan komentosarjan lataamisessa
     public void Awake()
     {
         if(Instance == null)
@@ -49,13 +51,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Kutsutaan ensimmaisella kehyksella
     void Start()
     {
+        //Application.targetFrameRate = -1;
+        //Application.targetFrameRate = 60;
+
         playerSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         playerNator = GetComponent<Animator>();
     }
 
+    // Kutsutaan joka kehyksella
     void Update()
     {
         transform.position += Vector3.right * playerSpeed * Time.deltaTime;
@@ -72,11 +79,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Kutsutaan, kun peliobjekti tormaa laukaisijaan
     private void OnTriggerEnter2D(Collider2D other)
     {
         
     }
 
+    //Kutsutaan, kun peliobjekti tormaa toiseen tormaajaan
     private void OnCollisionEnter2D(Collision2D collider)
     {
         
